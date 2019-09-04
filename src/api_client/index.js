@@ -1,12 +1,13 @@
 'use strict'
 
 const rp = require('request-promise');
+const token = 'BQC_cyLHvfEdRB4vclXm7t1LQLS0pPiky0KC_npg7LHpT4a68oAIgv5PpPaAx2zTJIsrIL5ZKvtgEHwEg_s';
 
 const api = {
 
     /* informacion de la base url de spotify */
     _baseUrl() {
-        return `https://api.spotify.com/v1/`
+        return `https://api.spotify.com/v1`
     },
 
     /* funcion que construira la llamada */
@@ -25,13 +26,15 @@ const api = {
     },
 
     /* lista de categorias */
-    getListBrowseCategory(country) {
-        return this._call('get', `browse/categories/?${country}`, undefined, 'BQD4nQtF_v6V7wFays-uPM4sLUyu80txFRNUwynwSJdS9eFLpLnm0hnCb90IPPMn8XHPofWVKCosaxCqZeo');
+    getListBrowseCategory() {
+        return this._call('get', `browse/categories?country=ES`, undefined, token);
     },
 
     /* lista de playlista por id de categoria */
-    getCategoryPlayList(category, country) {
-        return this._call('get', `browse/categories/${category}/playlists?${country}`, undefined, 'BQD4nQtF_v6V7wFays-uPM4sLUyu80txFRNUwynwSJdS9eFLpLnm0hnCb90IPPMn8XHPofWVKCosaxCqZeo');
+    getCategoryPlayList(category) {
+        return this._call('get', `browse/categories/${category}/playlists?country=ES&limit=10`, undefined, token);
     }
 
 }
+
+export default api;
