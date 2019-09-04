@@ -23,9 +23,11 @@ class Playlists extends Component {
     }
 
     render() {
+        const { playlists } = this.state;
+
         return (
             <ul>
-                {this.state.playlists.map( playlist => <PlaylistBox playlist={playlist}/>)}
+                {playlists.map(playlist => <PlaylistBox playlist={playlist} /> )}
             </ul>
         );
     }

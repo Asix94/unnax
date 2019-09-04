@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-const PlaylistBox = ({playlist}) => {
-
+const PlaylistBox = ({ playlist }) => {
     return <li key={playlist.id}>{playlist.name}</li>
 }
 

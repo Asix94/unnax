@@ -27,9 +27,7 @@ class SelectCategories extends Component {
         return <form onSubmit={this.handleSubmit}>
           <select value={this.state.categoryId} onChange={this.handleChange}>
               <option value={-1}>Selecciona una categoria</option>
-              { this.state.categories.map( category => {
-                  return <option value={category.id} key={category.id}>{category.name}</option>
-              })}
+              { this.state.categories.map(({ id, name }) => <option value={id} key={id}>{name}</option> )}
           </select>
       </form>
     }
