@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Select, MenuItem, FormControl } from '@material-ui/core';
 import logic from '../../logic';
+import './index.css'
 
 class SelectCategories extends Component {
 
     state = {
         categories: [],
-        categoryId: ''
+        categoryId: -1
     };
 
     componentDidMount(){
@@ -27,7 +28,7 @@ class SelectCategories extends Component {
     render() {
         return (
             <FormControl>
-                <Select value={this.state.categoryId} onChange={this.handleChange}>
+                <Select className="select" value={this.state.categoryId} onChange={this.handleChange}>
                     <MenuItem value={-1}>Selecciona una categoria</MenuItem>
                     { this.state.categories.map(({ id, name }) => <MenuItem value={id} key={id}>{name}</MenuItem> )}
                 </Select>

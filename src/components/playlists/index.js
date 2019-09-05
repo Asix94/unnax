@@ -46,7 +46,7 @@ class Playlists extends Component {
                                     />
                                 </Header>
                                 <Content>
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                    <Typography>
                                         {playlist.name}
                                     </Typography>
                                 </Content>
