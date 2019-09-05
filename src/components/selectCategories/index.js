@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Select, MenuItem, FormControl } from '@material-ui/core';
 import logic from '../../logic';
 
 class SelectCategories extends Component {
@@ -19,16 +20,18 @@ class SelectCategories extends Component {
     handleChange = event => {
         const categoryId = event.target.value;
         this.setState({categoryId}, () => {
-            if(categoryId !== "-1") this.props.onSelectCategory(categoryId)
+            if(categoryId !== -1) this.props.onSelectCategory(categoryId)
         });
     }
 
     render(){
         return <form onSubmit={this.handleSubmit}>
-          <select value={this.state.categoryId} onChange={this.handleChange}>
-              <option value={-1}>Selecciona una categoria</option>
-              { this.state.categories.map(({ id, name }) => <option value={id} key={id}>{name}</option> )}
-          </select>
+          <FormControl>
+            <Select value={this.state.categoryId} onChange={this.handleChange}>
+                <MenuItem value={-1}>Selecciona una categoria</MenuItem>
+                { this.state.categories.map(({ id, name }) => <MenuItem value={id} key={id}>{name}</MenuItem> )}
+            </Select>
+        </FormControl>
       </form>
     }
 }
