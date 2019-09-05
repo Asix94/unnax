@@ -1,6 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import logic from '../../logic';
 import PlaylistBox from '../playlistBox/';
+import Grid from '@material-ui/core/Grid';
 
 class Playlists extends Component {
 
@@ -26,9 +27,9 @@ class Playlists extends Component {
         const { playlists } = this.state;
 
         return (
-            <ul>
+            <Grid container spacing={4}>
                 {playlists.map(playlist => <PlaylistBox playlist={playlist} /> )}
-            </ul>
+            </Grid>
         );
     }
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 const rp = require('request-promise');
-const token = 'BQAYrWlTs5mDoDyyKhFBsKKrU_gRyZ3IiD4DuYn6WJqFkfyUO7tT0ELXoHecOFTjE3t8es7HbvXBxEFCgdc';
+const token = 'BQC9jwsihH8PDpb-xanA_ipMz6KSiOIFuKz1mm6eKuCthbBJ2zM8WI4GGXuFx_qHYLvqKS02r2xcenH-FeI';
 
 const api = {
 
