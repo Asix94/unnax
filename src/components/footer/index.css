@@ -1,0 +1,14 @@
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo-footer{
+    margin-top: 20px;
+    width: 50px;
+}
+
+.text{
+    color: white;
+}
