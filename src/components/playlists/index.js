@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import logic from '../../logic';
-import PlaylistBox from '../playlistBox/';
+import Card, { Content, Header } from '../card';
 import Grid from '@material-ui/core/Grid';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
 class Playlists extends Component {
 
@@ -28,7 +30,30 @@ class Playlists extends Component {
 
         return (
             <Grid container spacing={4}>
-                {playlists.map(playlist => <PlaylistBox playlist={playlist} /> )}
+                {playlists.map(playlist => {
+                    const image = playlist.images && playlist.images[0] && playlist.images[0].url;
+                    
+                    return (
+                        <Grid item md={2}>
+                            <Card>
+                                <Header>
+                                    <CardMedia
+                                        component="img"
+                                        alt={playlist.name}
+                                        height="140"
+                                        image={image}
+                                        title={playlist.name}
+                                    />
+                                </Header>
+                                <Content>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {playlist.name}
+                                    </Typography>
+                                </Content>
+                            </Card>
+                        </Grid>
+                    );
+                })}
             </Grid>
         );
     }

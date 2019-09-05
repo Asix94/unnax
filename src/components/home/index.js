@@ -4,7 +4,6 @@ import Playlists from '../playlists';
 import './index.css';
 
 class Home extends Component {
-
     state = {
         categoryId: ''
     };

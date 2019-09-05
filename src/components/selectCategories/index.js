@@ -24,15 +24,15 @@ class SelectCategories extends Component {
         });
     }
 
-    render(){
-        return <form onSubmit={this.handleSubmit}>
-          <FormControl>
-            <Select value={this.state.categoryId} onChange={this.handleChange}>
-                <MenuItem value={-1}>Selecciona una categoria</MenuItem>
-                { this.state.categories.map(({ id, name }) => <MenuItem value={id} key={id}>{name}</MenuItem> )}
-            </Select>
-        </FormControl>
-      </form>
+    render() {
+        return (
+            <FormControl>
+                <Select value={this.state.categoryId} onChange={this.handleChange}>
+                    <MenuItem value={-1}>Selecciona una categoria</MenuItem>
+                    { this.state.categories.map(({ id, name }) => <MenuItem value={id} key={id}>{name}</MenuItem> )}
+                </Select>
+            </FormControl>
+        );
     }
 }
 
